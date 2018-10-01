@@ -10,7 +10,10 @@ public class Greeter {
 
     public static void main(String[] args) {
         Greeter greeter = new Greeter();
-        HelloWorldGreeting helloWorldGreeting = new HelloWorldGreeting();
+        Greeting helloWorldGreeting = new HelloWorldGreeting();
         greeter.greet(helloWorldGreeting);
+
+        Greeting myLambdaFunction = () -> System.out.println("Hello world!");
     }
 }
+
