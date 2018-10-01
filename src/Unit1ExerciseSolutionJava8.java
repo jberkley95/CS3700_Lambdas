@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * @author John Berkley
@@ -32,9 +33,9 @@ public class Unit1ExerciseSolutionJava8 {
         printConditionally(people, p -> p.getLastName().startsWith("C"));
     }
 
-    private static void printConditionally(List<Person> people, Condition condition) {
+    private static void printConditionally(List<Person> people, Predicate<Person> predicate) {
         for (Person p : people) {
-            if (condition.test(p)) {
+            if (predicate.test(p)) {
                 System.out.println(p);
             }
         }
