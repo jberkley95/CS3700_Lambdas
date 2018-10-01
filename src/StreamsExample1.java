@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * @author John Berkley
@@ -19,5 +20,12 @@ public class StreamsExample1 {
         people.stream()
                 .filter(p -> p.getLastName().startsWith("C"))
                 .forEach(p -> System.out.println(p.getFirstName()));
+
+        long count = people.parallelStream()
+                .filter(p -> p.getLastName().startsWith("C"))
+                .count();
+
+        System.out.println(count);
+
     }
 }
